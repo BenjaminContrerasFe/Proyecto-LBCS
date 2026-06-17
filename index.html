@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>HOME SCAPE</title>
+    <title>HOME</title>
 </head>
 <body>
     <div class="header">
@@ -44,10 +44,22 @@
         <p>Hoteles, departamentos y casas al mejor precio.</p>
 
         <div class="buscador">
-            <input type="text" placeholder="¿Que buscas?">
+            
+           <label for="opcion"></label>
+          <select id="opcion" name="opcion">
+           <option value="op">¿Que buscas?</option>
+           <option value="casa">Casa</option>
+           <option value="depa">Departamentos</option>
+           <option value="hotel">Hotel</option>
+          </select>
+          
+
             <input type="date">
             <input type="date">
-            <button>Buscar</button>
+              <input type="number"> //cambiar con java
+              <a href="buscar.html"><button>Buscar</button></a>
+          
+           
         </div>
     </section>
     <section class="alojamientos-destacados">
@@ -68,21 +80,23 @@
         <div class="alojamiento">
             <img src="imagenes/departamento1.jpg" alt="Departamento">
             <span class="tipo">Departamento</span>
-            <h3>Departamento Premium</h3>
-            <p>Bariloche</p>
+            <h3>Departamento dos ambientes</h3>
+            <p>Neuquen capital</p>
             <p class="precio">$75.000 / noche</p>
         </div>
 
         <div class="alojamiento">
             <img src="imagenes/hotel1.jpg" alt="Hotel">
             <span class="tipo">Hotel</span>
-            <h3>Hotel Patagonia</h3>
-            <p>Villa La Angostura</p>
-            <p class="precio">$120.000 / noche</p>
+            <h3>La Via Hostel</h3>
+            <p>Neuquen capital</p>
+            <p class="precio">$45.000 / noche</p>
         </div>
 
     </div>
+    <footer>
 
+    </footer>
 </section>
     
 </body>

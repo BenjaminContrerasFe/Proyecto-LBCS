@@ -6,13 +6,13 @@
 }
 
 body{
-    background-color: #f5f5f5;
+    background-color: #fdf4e5
 }
 
 /* HEADER */
 
 .header{
-    background-color: #08144b;
+    background-color: #5c2530;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +48,7 @@ body{
 }
 
 .login{
-    color: white;
+    color: rgb(83, 26, 26);
 }
 
 .login:hover{
@@ -70,7 +70,7 @@ body{
 }
 
 .publicar:hover{
-    background-color: #31ad00;
+    background-color: #610000;
 }
 
 /* MENÚ */

@@ -1,0 +1,110 @@
+/* --- CONTENEDOR DE CATEGORÍAS RÁPIDAS (Estilo Airbnb) --- */
+.categories-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    text-decoration: none; /* Elimina el subrayado azul clásico de los enlaces */
+    color: #333;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    min-width: 140px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.category-card:hover {
+    border-color: #003580;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.category-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.category-name {
+    font-size: 14px;
+}
+
+
+/* --- BARRA DE BÚSQUEDA FORMULARIO (Estilo Matriz) --- */
+.search-bar-form {
+    background-color: #ffb703; /* Fondo amarillo llamativo para destacar la búsqueda */
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.search-input-group label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.search-input-group input,
+.search-input-group select {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    width: 100%;
+    background: transparent;
+    font-family: inherit;
+}
+
+/* Botón de envío de la búsqueda */
+.search-btn {
+    background-color: #003580;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: 100%;
+}
+
+.search-btn:hover {
+    background-color: #002252;
+}
+
+/* Responsivo para celulares: se apila verticalmente */
+@media (max-width: 768px) {
+    .search-bar-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .categories-container {
+        flex-wrap: wrap;
+    }
+}
