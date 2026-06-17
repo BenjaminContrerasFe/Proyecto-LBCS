@@ -48,7 +48,7 @@ body{
 }
 
 .login{
-    color: rgb(83, 26, 26);
+    color: #5c2530;
 }
 
 .login:hover{
@@ -57,7 +57,7 @@ body{
 
 .registro{
     background-color: white;
-    color: #062c02;;
+    color: #e8a793;
 }
 
 .registro:hover{
@@ -76,7 +76,7 @@ body{
 /* MENÚ */
 
 .menu{
-    background-color: #062c02;
+    background-color: #5c2530;
     display: flex;
     gap: 25px;
     padding: 15px 50px;
@@ -91,13 +91,13 @@ body{
 }
 
 .menu a:hover{
-    color: #febb02;
+    color: #e8a793;
 }
 
 /* HERO */
 
 .hero{
-    background-color:#3baf79;
+    background-color:#5c2530;
     color: white;
     text-align: center;
     padding: 80px 20px 120px;
@@ -116,7 +116,7 @@ body{
 /* BUSCADOR */
 
 .buscador{
-    background-color: #febb02;
+    background-color: #5c2530;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -137,7 +137,7 @@ body{
 
 .buscador button{
     padding: 15px 25px;
-    background-color: #0071c2;
+    background-color: #000102;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
