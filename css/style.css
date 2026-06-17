@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+/* HEADER */
+
+.header{
+    background-color: #003b95;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.logo img{
+    height: 80px;
+    width: auto;
+}
+
+.acciones{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.preferencia{
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login,
+.registro,
+.publicar{
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.login{
+    color: white;
+}
+
+.login:hover{
+    text-decoration: underline;
+}
+
+.registro{
+    background-color: white;
+    color: #003b95;
+}
+
+.registro:hover{
+    background-color: #e6e6e6;
+}
+
+.publicar{
+    background-color: #febb02;
+    color: black;
+}
+
+.publicar:hover{
+    background-color: #e0a800;
+}
+
+/* MENÚ */
+
+.menu{
+    background-color: #003b95;
+    display: flex;
+    gap: 25px;
+    padding: 15px 50px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    color: #febb02;
+}
+
+/* HERO */
+
+.hero{
+    background-color: #003b95;
+    color: white;
+    text-align: center;
+    padding: 80px 20px 120px;
+}
+
+.hero h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* BUSCADOR */
+
+.buscador{
+    background-color: #febb02;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.buscador input{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    min-width: 220px;
+    font-size: 15px;
+}
+
+.buscador button{
+    padding: 15px 25px;
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buscador button:hover{
+    background-color: #005999;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+
+    .header{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .acciones{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .hero h1{
+        font-size: 32px;
+    }
+
+    .hero p{
+        font-size: 18px;
+    }
+
+    .buscador{
+        flex-direction: column;
+    }
+
+    .buscador input,
+    .buscador button{
+        width: 100%;
+    }
+}
