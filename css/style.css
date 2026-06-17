@@ -189,3 +189,62 @@ body{
         width: 100%;
     }
 }
+.alojamientos-destacados{
+    padding: 60px;
+}
+
+.alojamientos-destacados h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.alojamientos-destacados p{
+    color: #666;
+}
+
+.contenedor-alojamientos{
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.alojamiento{
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.alojamiento:hover{
+    transform: translateY(-8px);
+}
+
+.alojamiento img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.alojamiento h3{
+    padding: 10px 15px;
+}
+
+.tipo{
+    background: #003b95;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.precio{
+    font-weight: bold;
+    padding: 0 15px 15px;
+    color: #003b95;
+}
