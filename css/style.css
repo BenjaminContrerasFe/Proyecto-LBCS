@@ -234,7 +234,7 @@ body{
 }
 
 .tipo{
-    background: #003b95;
+    background: #950000;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -246,5 +246,5 @@ body{
 .precio{
     font-weight: bold;
     padding: 0 15px 15px;
-    color: #003b95;
+    color: #950000;
 }
