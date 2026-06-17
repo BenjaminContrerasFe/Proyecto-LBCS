@@ -12,7 +12,7 @@ body{
 /* HEADER */
 
 .header{
-    background-color: #003b95;
+    background-color: #08144b;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +57,7 @@ body{
 
 .registro{
     background-color: white;
-    color: #003b95;
+    color: #062c02;;
 }
 
 .registro:hover{
@@ -65,18 +65,18 @@ body{
 }
 
 .publicar{
-    background-color: #febb02;
+    background-color: #ffffff;
     color: black;
 }
 
 .publicar:hover{
-    background-color: #e0a800;
+    background-color: #31ad00;
 }
 
 /* MENÚ */
 
 .menu{
-    background-color: #003b95;
+    background-color: #062c02;
     display: flex;
     gap: 25px;
     padding: 15px 50px;
@@ -84,7 +84,7 @@ body{
 }
 
 .menu a{
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -97,7 +97,7 @@ body{
 /* HERO */
 
 .hero{
-    background-color: #003b95;
+    background-color:#3baf79;
     color: white;
     text-align: center;
     padding: 80px 20px 120px;
@@ -138,7 +138,7 @@ body{
 .buscador button{
     padding: 15px 25px;
     background-color: #0071c2;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
     cursor: pointer;
