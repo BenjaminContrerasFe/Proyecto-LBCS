@@ -6,13 +6,13 @@
 }
 
 body{
-    background-color: #fdf4e5
+    background-color: #fdecce
 }
 
 /* HEADER */
 
 .header{
-    background-color: #5c2530;
+    background-color: #8f001d;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +48,7 @@ body{
 }
 
 .login{
-    color: #5c2530;
+    color: rgb(83, 26, 26);
 }
 
 .login:hover{
@@ -57,7 +57,7 @@ body{
 
 .registro{
     background-color: white;
-    color: #e8a793;
+    color: #062c02;;
 }
 
 .registro:hover{
@@ -70,13 +70,13 @@ body{
 }
 
 .publicar:hover{
-    background-color: #610000;
+    background-color: #cf00b4;
 }
 
 /* MENÚ */
 
 .menu{
-    background-color: #5c2530;
+    background-color: #062c02;
     display: flex;
     gap: 25px;
     padding: 15px 50px;
@@ -91,13 +91,13 @@ body{
 }
 
 .menu a:hover{
-    color: #e8a793;
+    color: #febb02;
 }
 
 /* HERO */
 
 .hero{
-    background-color:#5c2530;
+    background-color:#3baf79;
     color: white;
     text-align: center;
     padding: 80px 20px 120px;
@@ -116,7 +116,7 @@ body{
 /* BUSCADOR */
 
 .buscador{
-    background-color: #5c2530;
+    background-color: #febb02;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -137,7 +137,7 @@ body{
 
 .buscador button{
     padding: 15px 25px;
-    background-color: #000102;
+    background-color: #0071c2;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
@@ -234,7 +234,7 @@ body{
 }
 
 .tipo{
-    background: #950000;
+    background: #003b95;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -246,5 +246,5 @@ body{
 .precio{
     font-weight: bold;
     padding: 0 15px 15px;
-    color: #950000;
+    color: #003b95;
 }
