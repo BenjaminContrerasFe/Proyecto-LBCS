@@ -6,14 +6,14 @@
 }
 
 body {
-    background-color: #F8F5F0; /* Fondo beige cálido (tomado de la izquierda de la img 1) */
+    background-color: #6d6c6c00; /* Fondo beige cálido (tomado de la izquierda de la img 1) */
     color: #2B0B10;            /* Texto borgoña muy oscuro para evitar el negro rígido */
 }
 
 /* HEADER */
 
 .header {
-    background-color: #591C27; /* El borgoña/vino característico de la marca */
+    background-color: #020b5e; /* El borgoña/vino característico de la marca */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,8 +36,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #F8F5F0;  /* Combina con el fondo general */
-    color: #591C27;             /* Texto borgoña */
+    background-color: #e9e9e9;  /* Combina con el fondo general */
+    color: #000000;             /* Texto borgoña */
 }
 
 .login,
@@ -51,37 +51,39 @@ body {
 }
 
 .login {
-    color: #FFFFFF; /* Cambiado a blanco para que resalte sobre el fondo borgoña */
+    color: #4c81d1; /* Cambiado a blanco para que resalte sobre el fondo borgoña */
 }
 
 .login:hover {
     text-decoration: underline;
+    background-color: #020b5e; ;
+    color: #4c81d1;
 }
 
+
 .registro {
-    background-color: #FFFFFF; /* Botón blanco limpio */
-    color: #591C27;            /* Letras en borgoña */
+    background-color: #020b5e; /* Botón blanco limpio */
+    color: #4c81d1;            /* Letras en borgoña */
 }
 
 .registro:hover {
-    background-color: #EAA38E; /* Al pasar el mouse cambia al salmón cálido */
-    color: #2B0B10;
-}
+    background-color:  #020b5e;  /* Al pasar el mouse cambia al salmón cálido */
+} 
 
 .publicar {
-    background-color: rgba(255, 255, 255, 0.15); /* Botón semitransparente elegante */
-    color: #FFFFFF;
+    background-color:  #020b5e; /* Botón semitransparente elegante */
+    color: #4c81d1;
 }
 
 .publicar:hover {
-    background-color: #FFFFFF;
-    color: #591C27;
+    background-color: #020b5e; 
+    color: #4c81d1;
 }
 
 /* MENÚ */
 
 .menu {
-    background-color: #F8F5F0; /* Fondo beige cálido continuo */
+    background-color: #020b5e; /* Fondo beige cálido continuo */
     display: flex;
     gap: 25px;
     padding: 15px 50px;
@@ -89,21 +91,21 @@ body {
 }
 
 .menu a {
-    color: #591C27; /* Enlaces en borgoña */
+    color: #4c81d1;/* Enlaces en borgoña */
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: #EAA38E; /* El hover pasa al color salmón */
+    color: #8650a5; /* El hover pasa al color salmón */
 }
 
 /* HERO */
 
 .hero {
-    background-color: #F8F5F0; /* Todo el bloque mantiene el fondo cálido */
-    color: #2B0B10;
+    background-color:#020b5e;/* Todo el bloque mantiene el fondo cálido */
+    color: #00c3ff;
     text-align: center;
     padding: 80px 20px 120px;
 }
@@ -111,7 +113,7 @@ body {
 .hero h1 {
     font-size: 48px;
     margin-bottom: 15px;
-    color: #591C27; /* Título principal en borgoña para dar impacto */
+    color: #ffffff; /* Título principal en borgoña para dar impacto */
 }
 
 .hero p {
@@ -122,7 +124,7 @@ body {
 /* BUSCADOR */
 
 .buscador {
-    background-color: #591C27; /* El contenedor pasa de azul a borgoña */
+    background-color: #cacaca; /* El contenedor pasa de azul a borgoña */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -140,14 +142,14 @@ body {
     border-radius: 5px;
     min-width: 220px;
     font-size: 15px;
-    color: #2B0B10;
-    background-color: #FFFFFF;
+    color: #acacac;
+    background-color: #ffffff;
 }
 
 .buscador button {
     padding: 15px 25px;
-    background-color: #EAA38E; /* Botón de acción principal en color terracota/salmón */
-    color: #2B0B10;            /* Letras oscuras para excelente contraste */
+    background-color:  #4c81d1;/* Botón de acción principal en color terracota/salmón */
+    color: #020b5e;         /* Letras oscuras para excelente contraste */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -157,7 +159,7 @@ body {
 }
 
 .buscador button:hover {
-    background-color: #DB927E; /* Variación un poco más oscura para el hover */
+    background-color: #999999; /* Variación un poco más oscura para el hover */
 }
 
 /* RESPONSIVE */
