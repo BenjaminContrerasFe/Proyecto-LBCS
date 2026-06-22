@@ -1,45 +1,48 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-color: #616161;
+body {
+    background-color: #F8F5F0; /* Fondo beige cálido (tomado de la izquierda de la img 1) */
+    color: #2B0B10;            /* Texto borgoña muy oscuro para evitar el negro rígido */
 }
 
 /* HEADER */
 
-.header{
-    background-color: #294c60;
+.header {
+    background-color: #591C27; /* El borgoña/vino característico de la marca */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
 }
 
-.logo img{
+.logo img {
     height: 80px;
     width: auto;
 }
 
-.acciones{
+.acciones {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.preferencia{
+.preferencia {
     padding: 8px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #F8F5F0;  /* Combina con el fondo general */
+    color: #591C27;             /* Texto borgoña */
 }
 
 .login,
 .registro,
-.publicar{
+.publicar {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -47,77 +50,79 @@ body{
     font-weight: bold;
 }
 
-.login{
-    color: #000000;
+.login {
+    color: #FFFFFF; /* Cambiado a blanco para que resalte sobre el fondo borgoña */
 }
 
-.login:hover{
+.login:hover {
     text-decoration: underline;
 }
 
-.registro{
-    background-color: white;
-    color:#9e9e9e;
-    
+.registro {
+    background-color: #FFFFFF; /* Botón blanco limpio */
+    color: #591C27;            /* Letras en borgoña */
 }
 
-.registro:hover{
-    background-color: #e6e6e6;
+.registro:hover {
+    background-color: #EAA38E; /* Al pasar el mouse cambia al salmón cálido */
+    color: #2B0B10;
 }
 
-.publicar{
-    background-color: #746d6b8e;
-    color: #000000;
+.publicar {
+    background-color: rgba(255, 255, 255, 0.15); /* Botón semitransparente elegante */
+    color: #FFFFFF;
 }
 
-.publicar:hover{
-    background-color:#fdf4e5;
+.publicar:hover {
+    background-color: #FFFFFF;
+    color: #591C27;
 }
 
 /* MENÚ */
 
-.menu{
-    background-color: #fdf4e5;
+.menu {
+    background-color: #F8F5F0; /* Fondo beige cálido continuo */
     display: flex;
     gap: 25px;
     padding: 15px 50px;
-    border-top: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgba(89, 28, 39, 0.1); /* Línea borgoña muy suave en vez de negra */
 }
 
-.menu a{
-    color: #000000;;
+.menu a {
+    color: #591C27; /* Enlaces en borgoña */
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
 }
 
-.menu a:hover{
-    color: #003b95;
+.menu a:hover {
+    color: #EAA38E; /* El hover pasa al color salmón */
 }
 
 /* HERO */
 
-.hero{
-    background-color:#fdf4e5;
-    color: white;
+.hero {
+    background-color: #F8F5F0; /* Todo el bloque mantiene el fondo cálido */
+    color: #2B0B10;
     text-align: center;
     padding: 80px 20px 120px;
 }
 
-.hero h1{
+.hero h1 {
     font-size: 48px;
     margin-bottom: 15px;
+    color: #591C27; /* Título principal en borgoña para dar impacto */
 }
 
-.hero p{
+.hero p {
     font-size: 20px;
     margin-bottom: 40px;
 }
 
 /* BUSCADOR */
 
-.buscador{
-    background-color: #;
+.buscador {
+    background-color: #591C27; /* El contenedor pasa de azul a borgoña */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -126,20 +131,23 @@ body{
     border-radius: 10px;
     max-width: 1000px;
     margin: auto;
+    box-shadow: 0px 10px 25px rgba(89, 28, 39, 0.15); /* Sombra suave para dar volumen */
 }
 
-.buscador input{
+.buscador input {
     padding: 15px;
     border: none;
     border-radius: 5px;
     min-width: 220px;
     font-size: 15px;
+    color: #2B0B10;
+    background-color: #FFFFFF;
 }
 
-.buscador button{
+.buscador button {
     padding: 15px 25px;
-    background-color: #fdf4e5;
-    color: rgb(255, 255, 255);
+    background-color: #EAA38E; /* Botón de acción principal en color terracota/salmón */
+    color: #2B0B10;            /* Letras oscuras para excelente contraste */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -148,104 +156,114 @@ body{
     transition: 0.3s;
 }
 
-.buscador button:hover{
-    background-color: #5c2530;
+.buscador button:hover {
+    background-color: #DB927E; /* Variación un poco más oscura para el hover */
 }
 
 /* RESPONSIVE */
 
 @media(max-width: 768px){
 
-    .header{
+    .header {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
     }
 
-    .acciones{
+    .acciones {
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .menu{
+    .menu {
         flex-wrap: wrap;
         justify-content: center;
         padding: 15px;
     }
 
-    .hero h1{
+    .hero h1 {
         font-size: 32px;
     }
 
-    .hero p{
+    .hero p {
         font-size: 18px;
     }
 
-    .buscador{
+    .buscador {
         flex-direction: column;
     }
 
     .buscador input,
-    .buscador button{
+    .buscador button {
         width: 100%;
     }
 }
-.alojamientos-destacados{
+
+/* SECCIÓN ALOJAMIENTOS DESTACADOS */
+
+.alojamientos-destacados {
     padding: 60px;
+    background-color: #F0EAE1; /* Reemplazado el gris oscuro por un beige un toque más profundo */
 }
 
-.alojamientos-destacados h2{
+.alojamientos-destacados h2 {
     font-size: 32px;
     margin-bottom: 10px;
+    color: #591C27;
 }
 
-.alojamientos-destacados p{
-    color: #666;
+.alojamientos-destacados p {
+    color: #6E5A5C; /* Gris cálido/marrón sutil para textos secundarios */
 }
 
-.contenedor-alojamientos{
+.contenedor-alojamientos {
     display: flex;
     gap: 25px;
     margin-top: 30px;
     flex-wrap: wrap;
 }
 
-.alojamiento{
+.alojamiento {
     width: 320px;
-    background: white;
+    background: #FFFFFF;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(89, 28, 39, 0.06); /* Sombra integrada a la nueva paleta */
     transition: 0.3s;
     cursor: pointer;
 }
 
-.alojamiento:hover{
+.alojamiento:hover {
     transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(89, 28, 39, 0.12);
 }
 
-.alojamiento img{
+.alojamiento img {
     width: 100%;
     height: 220px;
     object-fit: cover;
 }
 
-.alojamiento h3{
+.alojamiento h3 {
     padding: 10px 15px;
+    color: #2B0B10;
 }
 
-.tipo{
-    background: #003b95;
-    color: white;
+.tipo {
+    background: #591C27; /* Reemplazado el azul fuerte por el borgoña de la marca */
+    color: #FFFFFF;
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 15px;
     display: inline-block;
     margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.precio{
+.precio {
     font-weight: bold;
     padding: 0 15px 15px;
-    color: #003b95;
+    color: #591C27; /* El precio se destaca con el color principal */
+    font-size: 18px;
 }

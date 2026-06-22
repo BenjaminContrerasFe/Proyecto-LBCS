@@ -38,9 +38,8 @@
 }
 
 
-/* --- BARRA DE BÚSQUEDA FORMULARIO (Estilo Matriz) --- */
 .search-bar-form {
-    background-color: #ffb703; /* Fondo amarillo llamativo para destacar la búsqueda */
+    background-color: #ffb703;
     padding: 12px;
     border-radius: 8px;
     display: flex;
@@ -80,7 +79,6 @@
     font-family: inherit;
 }
 
-/* Botón de envío de la búsqueda */
 .search-btn {
     background-color: #003580;
     color: white;
