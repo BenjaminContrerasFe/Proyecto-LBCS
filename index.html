@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="js/index.js">
+
     <title>HOME</title>
+    <link rel="icon" href="galeria/Diseño sin título.png" type="image/png">
+
 </head>
 <body>
     <div class="header">
           <div class="logo">
-                <link rel="icon" href="galeria/Diseño sin título.png" type="image/png">
-
+            <link rel="stylesheet" href="Galeria/logo.png.png" >
           </div>
               <div class="acciones">
             <select class="preferencia">
@@ -56,7 +59,42 @@
 
             <input type="date">
             <input type="date">
-              <input type="number"> //cambiar con java
+            <div class="pasajeros-contenedor">
+    <div class="pasajeros-btn" id="pasajerosBtn">
+        <span id="pasajerosTexto">1 adulto · 0 niños · 1 habitación</span>
+    </div>
+
+    <div class="pasajeros-dropdown" id="pasajerosDropdown">
+        <div class="pasajeros-item">
+            <span>Adultos</span>
+            <div class="control-contador">
+                <button type="button" class="btn-control minus" data-tipo="adultos">-</button>
+                <span id="cant-adultos">1</span>
+                <button type="button" class="btn-control plus" data-tipo="adultos">+</button>
+            </div>
+        </div>
+
+        <div class="pasajeros-item">
+            <span>Niños</span>
+            <div class="control-contador">
+                <button type="button" class="btn-control minus" data-tipo="ninos">-</button>
+                <span id="cant-ninos">0</span>
+                <button type="button" class="btn-control plus" data-tipo="ninos">+</button>
+            </div>
+        </div>
+
+        <div class="pasajeros-item">
+            <span>Habitaciones</span>
+            <div class="control-contador">
+                <button type="button" class="btn-control minus" data-tipo="habitaciones">-</button>
+                <span id="cant-habitaciones">1</span>
+                <button type="button" class="btn-control plus" data-tipo="habitaciones">+</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-pasajeros-listo" id="btnPasajerosListo">Listo</button>
+    </div>
+</div>
               <a href="buscar.html"><button>Buscar</button></a>
           
            
