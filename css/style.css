@@ -1,227 +1,375 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.split-screen {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
+body {
+    background-color: #010203; /* Fondo principal oscuro */
+    color: #ffffff;            /* Texto base claro */
 }
 
-.left-side {
-  flex: 1;
-  position: relative;
-  height: 100vh; 
-  overflow: hidden; 
+/* HEADER */
+
+.header {
+    background-color: #353d7c; /* Azul Noche */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
 }
 
-.bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.logo img {
+    height: 80px;
+    width: auto;
 }
 
-.brand-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; 
-  z-index: 10;
-  /* Usamos el azul hielo #C7E9F2 con opacidad para el fondo traslúcido */
-  background-color: rgba(199, 233, 242, 0.75); 
-  padding: 24px 40px; 
-  border-radius: 0; 
-  backdrop-filter: blur(6px); 
-  box-shadow: 0 4px 20px rgba(3, 44, 96, 0.08); 
-  display: flex;
-  align-items: center;
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.brand-logo {
-  font-size: 26px;
-  font-weight: 700;
-  color: #032C60; /* Azul oscuro principal */
-  letter-spacing: 0.5px;
-  text-decoration: none;
+.preferencia {
+    padding: 8px;
+    border: 1px solid #52baed;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #353d7c;
+    color: #ffffff;
 }
 
-.right-side {
-  flex: 1;
-  background-color: #032C60; /* Fondo azul oscuro profundo */
-  display: flex;
-  flex-direction: column;
+.login,
+.registro,
+.publicar {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
 }
 
-.form-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 60px 20px 60px;
+.login {
+    color: #ffffff;
 }
 
-.brand-logo-mobile {
-  display: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: #032C60;
+.login:hover {
+    text-decoration: underline;
+    background-color: #010203;
+    color: #52baed;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #C7E9F2; /* Texto claro para resaltar sobre el fondo oscuro */
-  font-size: 14px;
-  margin-left: 20px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+.registro {
+    background-color: #52baed; /* Celeste acento */
+    color: #010203;            /* Texto oscuro para alto contraste */
 }
 
-.nav-links a:hover, .nav-links a.active {
-  opacity: 1;
-  font-weight: 700;
-}
-
-.card-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 40px 60px 40px;
-}
-
-.form-card {
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 440px;
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(3, 44, 96, 0.05); 
-  border: 1px solid #99BAD9; /* Borde azul claro */
-}
-
-.form-card h2 {
-  color: #032C60; /* Título en azul oscuro */
-  font-size: 26px;
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  color: #658CA9; /* Subtítulo en azul acero */
-  font-size: 14px;
-  margin-bottom: 32px;
-}
-
-.input-group {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #032C60;
-  margin-bottom: 6px;
-}
-
-.input-group input {
-  padding: 14px;
-  border: 1px solid #99BAD9;
-  border-radius: 12px;
-  background-color: #ffffff;
-  color: #032C60;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.input-group input:focus {
-  border-color: #015D8C; /* Foco con azul océano */
-}
-
-.btn-main {
-  width: 100%;
-  padding: 14px;
-  background-color: #015D8C; /* Botón principal azul océano */
-  border: none;
-  border-radius: 12px;
-  color: #ffffff; /* Texto blanco para excelente contraste */
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 10px;
-}
-
-.btn-main:hover {
-  background-color: #032C60; /* Cambia a azul oscuro en el hover */
-}
-
-.divider-container {
-  display: flex;
-  align-items: center;
-  margin: 24px 0;
-}
-
-.line {
-  flex: 1;
-  border: 0;
-  border-top: 1px solid #99BAD9;
-}
-
-.divider-text {
-  color: #658CA9;
-  font-size: 12px;
-  padding: 0 10px;
-}
-
-.social-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.btn-social {
-  padding: 12px;
-  background-color: #ffffff;
-  border: 1px solid #99BAD9;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 13px;
-  color: #032C60;
-  transition: all 0.2s;
-}
-
-.btn-social:hover {
-  background-color: #C7E9F2; /* Ligero fondo azul hielo al pasar el mouse */
-  border-color: #015D8C;
-}
-
-@media (max-width: 768px) {
-  .left-side {
-    display: none; 
-  }
-  
-  .form-header {
-    padding: 24px;
-    background-color: #ffffff; /* Evita que el header móvil quede flotando sin fondo */
-  }
-
-  .brand-logo-mobile {
-    display: block;
-  }
-
-  .card-container {
-    padding: 10px 20px 40px 20px;
+.registro:hover {
     background-color: #ffffff;
-  }
+    color: #353d7c;
+} 
 
-  .form-card {
-    padding: 24px;
-    box-shadow: none;
+.publicar {
+    background-color: transparent;
+    border: 1px solid #52baed;
+    color: #52baed;
+}
+
+.publicar:hover {
+    background-color: #52baed;
+    color: #010203;
+}
+
+/* MENÚ */
+
+.menu {
+    background-color: #010203;
+    display: flex;
+    gap: 25px;
+    padding: 15px 50px;
+    border-top: 1px solid rgba(82, 186, 237, 0.2);
+    border-bottom: 1px solid rgba(82, 186, 237, 0.2);
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #52baed; /* Hover celeste */
+}
+
+/* HERO */
+
+.hero {
+    background-color: #353d7c;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px 120px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #52baed;
+}
+
+/* BUSCADOR */
+
+.buscador {
+    background-color: #010203;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: auto;
+    border: 1px solid #353d7c;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.buscador input {
+    padding: 15px;
+    border: 1px solid #353d7c;
+    border-radius: 5px;
+    min-width: 220px;
+    font-size: 15px;
+    color: #010203;
+    background-color: #ffffff;
+}
+
+.buscador button {
+    padding: 15px 25px;
+    background-color: #52baed;
+    color: #010203;
     border: none;
-  }
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buscador button:hover {
+    background-color: #ffffff;
+    color: #353d7c;
+}
+
+/* SELECTOR DE HUÉSPEDES INTERACTIVO */
+
+.pasajeros-contenedor {
+    position: relative;
+    min-width: 250px;
+}
+
+.pasajeros-btn {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #010203;
+    text-align: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #353d7c;
+    user-select: none;
+}
+
+.pasajeros-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 280px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 100;
+}
+
+.pasajeros-dropdown.mostrar {
+    display: block;
+}
+
+.pasajeros-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pasajeros-item span {
+    font-weight: bold;
+    color: #010203;
+    font-size: 15px;
+}
+
+.control-contador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #353d7c;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.btn-control {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #353d7c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+.btn-control:hover {
+    background-color: #52baed;
+    color: #010203;
+}
+
+.btn-pasajeros-listo {
+    width: 100%;
+    padding: 10px;
+    background-color: #353d7c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-pasajeros-listo:hover {
+    background-color: #52baed;
+    color: #010203;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .acciones {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .buscador {
+        flex-direction: column;
+    }
+
+    .buscador input,
+    .buscador button {
+        width: 100%;
+    }
+}
+
+/* SECCIÓN ALOJAMIENTOS DESTACADOS */
+
+.alojamientos-destacados {
+    padding: 60px;
+    background-color: #010203;
+}
+
+.alojamientos-destacados h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.alojamientos-destacados p {
+    color: #52baed;
+}
+
+.contenedor-alojamientos {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.alojamiento {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(82, 186, 237, 0.15);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.alojamiento:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(82, 186, 237, 0.3);
+}
+
+.alojamiento img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.alojamiento h3 {
+    padding: 10px 15px;
+    color: #010203;
+}
+
+.tipo {
+    background: #353d7c;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.precio {
+    font-weight: bold;
+    padding: 0 15px 15px;
+    color: #353d7c;
+    font-size: 18px;
 }
