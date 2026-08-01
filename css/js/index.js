@@ -1,76 +1,86 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. ELEMENTOS DEL DOM
     const pasajerosBtn = document.getElementById("pasajerosBtn");
     const pasajerosDropdown = document.getElementById("pasajerosDropdown");
     const pasajerosTexto = document.getElementById("pasajerosTexto");
-    const btnPasajerosListo = document.getElementById("btnPasajerosListo");
+    const btnListo = document.getElementById("btnPasajerosListo");
 
-    // Contadores iniciales
-    let contadores = {
+    const cantAdultos = document.getElementById("cant-adultos");
+    const cantNinos = document.getElementById("cant-ninos");
+    const cantHabitaciones = document.getElementById("cant-habitaciones");
+
+    // 2. ESTADO INICIAL
+    const estadoPasajeros = {
         adultos: 1,
         ninos: 0,
         habitaciones: 1
     };
 
-    // Límites mínimos de Booking
-    const minimos = { adultos: 1, ninos: 0, habitaciones: 1 };
-    // Límites máximos razonables
-    const maximos = { adultos: 30, ninos: 10, habitaciones: 10 };
+    // LÍMITES PERMITIDOS
+    const limites = {
+        adultos: { min: 1, max: 10 },
+        ninos: { min: 0, max: 6 },
+        habitaciones: { min: 1, max: 5 }
+    };
 
-    // 1. Abrir y cerrar el panel al hacer clic en el recuadro principal
+    // 3. TOGGLE DEL DESPLEGABLE
     pasajerosBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Evita que se cierre inmediatamente
+        e.stopPropagation();
         pasajerosDropdown.classList.toggle("mostrar");
     });
 
-    // 2. Cerrar al darle al botón "Listo"
-    btnPasajerosListo.addEventListener("click", () => {
+    // Cerrar al hacer clic en "Listo"
+    btnListo.addEventListener("click", () => {
         pasajerosDropdown.classList.remove("mostrar");
     });
 
-    // 3. Cerrar si el usuario hace clic en cualquier otra parte de la pantalla
+    // Cerrar si se hace clic fuera del contenedor
     document.addEventListener("click", (e) => {
-        if (!pasajerosDropdown.contains(e.target) && e.target !== pasajerosBtn) {
+        const contenedor = document.querySelector(".pasajeros-contenedor");
+        if (contenedor && !contenedor.contains(e.target)) {
             pasajerosDropdown.classList.remove("mostrar");
         }
     });
 
-    // Evitar que los clics dentro del menú lo cierren
+    // Evitar que el clic dentro del dropdown lo cierre por propagación
     pasajerosDropdown.addEventListener("click", (e) => {
         e.stopPropagation();
     });
 
-    // 4. Lógica de los botones + y -
-    const botones = pasajerosDropdown.querySelectorAll(".btn-control");
-    
-    botones.forEach(boton => {
+    // 4. LÓGICA DE CONTADORES (+ / -)
+    const botonesControl = document.querySelectorAll(".btn-control");
+
+    botonesControl.forEach((boton) => {
         boton.addEventListener("click", () => {
             const tipo = boton.getAttribute("data-tipo");
-            const esMas = boton.classList.contains("plus");
+            const esSuma = boton.classList.contains("plus");
 
-            if (esMas) {
-                if (contadores[tipo] < maximos[tipo]) {
-                    contadores[tipo]++;
+            if (esSuma) {
+                if (estadoPasajeros[tipo] < limites[tipo].max) {
+                    estadoPasajeros[tipo]++;
                 }
             } else {
-                if (contadores[tipo] > minimos[tipo]) {
-                    contadores[tipo]--;
+                if (estadoPasajeros[tipo] > limites[tipo].min) {
+                    estadoPasajeros[tipo]--;
                 }
             }
 
-            // Actualizar el número visual en el dropdown
-            document.getElementById(`cant-${tipo}`).innerText = contadores[tipo];
-            
-            // Actualizar la barra principal con los nuevos valores
-            actualizarTextoBarra();
+            actualizarInterfaz();
         });
     });
 
-    // 5. Función para armar la cadena de texto de la barra principal
-    function actualizarTextoBarra() {
-        const textoAdultos = `${contadores.adultos} ${contadores.adultos === 1 ? 'adulto' : 'adultos'}`;
-        const textoNinos = `${contadores.ninos} ${contadores.ninos === 1 ? 'niño' : 'niños'}`;
-        const textoHabitaciones = `${contadores.habitaciones} ${contadores.habitaciones === 1 ? 'habitación' : 'habitaciones'}`;
-        
-        pasajerosTexto.innerText = `${textoAdultos} · ${textoNinos} · ${textoHabitaciones}`;
+    // 5. ACTUALIZAR TEXTO Y CONTADORES EN PANTALLA
+    function actualizarInterfaz() {
+        // Actualizar números del panel
+        cantAdultos.textContent = estadoPasajeros.adultos;
+        cantNinos.textContent = estadoPasajeros.ninos;
+        cantHabitaciones.textContent = estadoPasajeros.habitaciones;
+
+        // Formatear texto del botón principal
+        const textoAdultos = `${estadoPasajeros.adultos} ${estadoPasajeros.adultos === 1 ? 'adulto' : 'adultos'}`;
+        const textoNinos = `${estadoPasajeros.ninos} ${estadoPasajeros.ninos === 1 ? 'niño' : 'niños'}`;
+        const textoHabitaciones = `${estadoPasajeros.habitaciones} ${estadoPasajeros.habitaciones === 1 ? 'habitación' : 'habitaciones'}`;
+
+        pasajerosTexto.textContent = `${textoAdultos} · ${textoNinos} · ${textoHabitaciones}`;
     }
 });

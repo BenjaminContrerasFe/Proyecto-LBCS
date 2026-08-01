@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME - Home Scape</title>
+    
+    <!-- Hojas de estilo CSS -->
     <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="js/index.js">
-
-    <title>HOME</title>
     <link rel="icon" href="galeria/Diseño sin título.png" type="image/png">
-
 </head>
 <body>
-    <div class="header">
-          <div class="logo">
-            <link rel="stylesheet" href="Galeria/logo.png.png" >
-          </div>
-              <div class="acciones">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="galeria/logo.png" alt="Logo Home Scape">
+        </div>
+        <div class="acciones">
             <select class="preferencia">
                 <option>ARS $</option>
                 <option>USD $</option>
@@ -29,113 +30,132 @@
                 <option>Português</option>
             </select>
 
-            <a href="" class="login">Iniciar sesión</a>
-            <a href="" class="registro">Registrarse</a>
-            <a href="" class="publicar">Publicar alojamiento</a>
-
+            <a href="login.html" class="login">Iniciar sesión</a>
+            <a href="registro.html" class="registro">Registrarse</a>
+            <a href="publicar.html" class="publicar">Publicar alojamiento</a>
         </div>
-    </div>
+    </header>
+
+    <!-- MENÚ -->
     <nav class="menu">
-        <a href="#"> Inicio</a>
-        <a href="#"> Hoteles</a>
-        <a href="#"> Casas</a>
-        <a href="#"> Departamentos</a>
+        <a href="#">Inicio</a>
+        <a href="#">Hoteles</a>
+        <a href="#">Casas</a>
+        <a href="#">Departamentos</a>
         <a href="#">Contacto</a>
     </nav>
 
+    <!-- HERO / BUSCADOR -->
     <section class="hero">
-        <h1>Encontrá el alojamiento ideal junto a scape home</h1>
+        <h1>Encontrá el alojamiento ideal junto a Home Scape</h1>
         <p>Hoteles, departamentos y casas al mejor precio.</p>
 
         <div class="buscador">
-            
-           <label for="opcion"></label>
-          <select id="opcion" name="opcion">
-           <option value="op">¿Que buscas?</option>
-           <option value="casa">Casa</option>
-           <option value="depa">Departamentos</option>
-           <option value="hotel">Hotel</option>
-          </select>
+            <select id="opcion" name="opcion">
+                <option value="op">¿Qué buscas?</option>
+                <option value="casa">Casa</option>
+                <option value="depa">Departamento</option>
+                <option value="hotel">Hotel</option>
+            </select>
 
             <input type="date">
             <input type="date">
+
+            <!-- CONTADOR DE PASAJEROS -->
             <div class="pasajeros-contenedor">
-    <div class="pasajeros-btn" id="pasajerosBtn">
-        <span id="pasajerosTexto">1 adulto · 0 niños · 1 habitación</span>
-    </div>
+                <div class="pasajeros-btn" id="pasajerosBtn">
+                    <span id="pasajerosTexto">1 adulto · 0 niños · 1 habitación</span>
+                </div>
 
-    <div class="pasajeros-dropdown" id="pasajerosDropdown">
-        <div class="pasajeros-item">
-            <span>Adultos</span>
-            <div class="control-contador">
-                <button type="button" class="btn-control minus" data-tipo="adultos">-</button>
-                <span id="cant-adultos">1</span>
-                <button type="button" class="btn-control plus" data-tipo="adultos">+</button>
+                <div class="pasajeros-dropdown" id="pasajerosDropdown">
+                    <div class="pasajeros-item">
+                        <span>Adultos</span>
+                        <div class="control-contador">
+                            <button type="button" class="btn-control minus" data-tipo="adultos">-</button>
+                            <span id="cant-adultos">1</span>
+                            <button type="button" class="btn-control plus" data-tipo="adultos">+</button>
+                        </div>
+                    </div>
+
+                    <div class="pasajeros-item">
+                        <span>Niños</span>
+                        <div class="control-contador">
+                            <button type="button" class="btn-control minus" data-tipo="ninos">-</button>
+                            <span id="cant-ninos">0</span>
+                            <button type="button" class="btn-control plus" data-tipo="ninos">+</button>
+                        </div>
+                    </div>
+
+                    <div class="pasajeros-item">
+                        <span>Habitaciones</span>
+                        <div class="control-contador">
+                            <button type="button" class="btn-control minus" data-tipo="habitaciones">-</button>
+                            <span id="cant-habitaciones">1</span>
+                            <button type="button" class="btn-control plus" data-tipo="habitaciones">+</button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-pasajeros-listo" id="btnPasajerosListo">Listo</button>
+                </div>
             </div>
-        </div>
 
-        <div class="pasajeros-item">
-            <span>Niños</span>
-            <div class="control-contador">
-                <button type="button" class="btn-control minus" data-tipo="ninos">-</button>
-                <span id="cant-ninos">0</span>
-                <button type="button" class="btn-control plus" data-tipo="ninos">+</button>
-            </div>
-        </div>
-
-        <div class="pasajeros-item">
-            <span>Habitaciones</span>
-            <div class="control-contador">
-                <button type="button" class="btn-control minus" data-tipo="habitaciones">-</button>
-                <span id="cant-habitaciones">1</span>
-                <button type="button" class="btn-control plus" data-tipo="habitaciones">+</button>
-            </div>
-        </div>
-
-        <button type="button" class="btn-pasajeros-listo" id="btnPasajerosListo">Listo</button>
-    </div>
-</div>
-              <a href="buscar.html"><button>Buscar</button></a>
-          
-           
+            <a href="buscar.html"><button type="button">Buscar</button></a>
         </div>
     </section>
-    <section class="alojamientos-destacados">
 
+    <!-- SECCIÓN CARRUSEL DE ALOJAMIENTOS -->
+    <section class="alojamientos-destacados">
     <h2>Alojamientos más solicitados</h2>
     <p>Los lugares preferidos por nuestros huéspedes.</p>
 
-    <div class="contenedor-alojamientos">
+    <div class="carrusel-wrapper">
+        <button type="button" class="carrusel-btn btn-prev" id="btnPrev">&lt;</button>
 
-        <div class="alojamiento">
-            <img src="imagenes/casa1.jpg" alt="Casa">
-            <span class="tipo">Casa</span>
-            <h3>Casa Moderna con Piscina</h3>
-            <p>Neuquén Capital</p>
-            <p class="precio">$95.000 / noche</p>
+        <!-- AQUÍ AGREGAS LAS TARJETAS Y SUS IMÁGENES EN EL HTML -->
+        <div class="carrusel-contenedor" id="carruselContenedor">
+
+            <!-- Tarjeta 1 -->
+            <div class="alojamiento">
+                <span class="tipo">Casa Rincon del rio</span>
+                <img src="galeria/recom/rincon del rio.PNG alt="Casa Moderna grande>
+                <div class="alojamiento-info">
+                    <h3>Casa Moderna Rincon del rio</h3>
+                    <p class="ubicacion">Neuquén Capital</p>
+                </div>
+                <div class="precio">$530.000 / noche</div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="alojamiento">
+                <span class="tipo">Departamento</span>
+                <img src="galeria/depa1.png" alt="Departamento dos ambientes">
+                <div class="alojamiento-info">
+                    <h3>Departamento dos ambientes</h3>
+                    <p class="ubicacion">Neuquén Capital</p>
+                </div>
+                <div class="precio">$75.000 / noche</div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="alojamiento">
+                <span class="tipo">Hotel</span>
+                <img src="galeria/hotel1.png" alt="La Via Hostel">
+                <div class="alojamiento-info">
+                    <h3>La Via Hostel</h3>
+                    <p class="ubicacion">Neuquén Capital</p>
+                </div>
+                <div class="precio">$45.000 / noche</div>
+            </div>
+
         </div>
 
-        <div class="alojamiento">
-            <img src="imagenes/departamento1.jpg" alt="Departamento">
-            <span class="tipo">Departamento</span>
-            <h3>Departamento dos ambientes</h3>
-            <p>Neuquen capital</p>
-            <p class="precio">$75.000 / noche</p>
-        </div>
-
-        <div class="alojamiento">
-            <img src="imagenes/hotel1.jpg" alt="Hotel">
-            <span class="tipo">Hotel</span>
-            <h3>La Via Hostel</h3>
-            <p>Neuquen capital</p>
-            <p class="precio">$45.000 / noche</p>
-        </div>
-
+        <button type="button" class="carrusel-btn btn-next" id="btnNext">&gt;</button>
     </div>
-    <footer>
-
-    </footer>
 </section>
-    
+    <footer>
+        <!-- Contenido del pie de página -->
+    </footer>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
