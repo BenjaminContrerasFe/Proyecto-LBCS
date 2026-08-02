@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function aplicarFiltro(tipoSeleccionado, totalHuespedes, habitacionesRequeridas) {
-    const tarjetas = document.querySelectorAll(".property-card, .alojamiento-card");
+    const tarjetas = document.querySelectorAll(".property-card");
     let visibles = 0;
 
     tarjetas.forEach(tarjeta => {
         const tipoTarjeta = tarjeta.getAttribute("data-type");
-        const capacidadTarjeta = parseInt(tarjeta.getAttribute("data-capacidad")) || 99;
-        const habitacionesTarjeta = parseInt(tarjeta.getAttribute("data-habitaciones")) || 1;
+        const capacidadTarjeta = parseInt(tarjeta.getAttribute("data-capacidad")) || 0;
+        const habitacionesTarjeta = parseInt(tarjeta.getAttribute("data-habitaciones")) || 0;
 
         // Validaciones
         const coincideTipo = (tipoSeleccionado === "todos" || tipoTarjeta === tipoSeleccionado);

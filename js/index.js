@@ -67,6 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (cantNinos) cantNinos.textContent = estadoPasajeros.ninos;
         if (cantHabitaciones) cantHabitaciones.textContent = estadoPasajeros.habitaciones;
 
+        const inputAdultos = document.getElementById("inputAdultos");
+        const inputNinos = document.getElementById("inputNinos");
+        const inputHabitaciones = document.getElementById("inputHabitaciones");
+
+        if(inputAdultos) inputAdultos.value= estadoPasajeros.adultos;
+        if(inputNinos) inputNinos.value= estadoPasajeros.ninos;
+        if(inputHabitaciones) inputHabitaciones.value= estadoPasajeros.habitaciones;
+
         const textoAdultos = `${estadoPasajeros.adultos} ${estadoPasajeros.adultos === 1 ? 'adulto' : 'adultos'}`;
         const textoNinos = `${estadoPasajeros.ninos} ${estadoPasajeros.ninos === 1 ? 'niño' : 'niños'}`;
         const textoHabitaciones = `${estadoPasajeros.habitaciones} ${estadoPasajeros.habitaciones === 1 ? 'habitación' : 'habitaciones'}`;
@@ -81,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
        2. LÓGICA DE MOVIMIENTO DE FLECHAS EN EL CARRUSEL
        ====================================================== */
 
-    document.addEventListener("DOMContentLoaded", () => {
     const carruselContenedor = document.getElementById("carruselContenedor");
     const btnPrev = document.getElementById("btnPrev");
     const btnNext = document.getElementById("btnNext");
