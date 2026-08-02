@@ -106,3 +106,61 @@
         flex-wrap: wrap;
     }
 }
+/* ======================================================
+   ESTILOS RESPONSIVE PARA TARJETAS DE BÚSQUEDA
+   ====================================================== */
+
+/* Adaptación de tarjetas horizontales */
+.results-list .alojamiento-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 200px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.results-list .alojamiento-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.results-list .alojamiento-card img {
+    width: 280px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.results-list .alojamiento-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Ajustes para pantallas medianas y móviles (Tablets y Celulares) */
+@media (max-width: 768px) {
+    .results-list .alojamiento-card {
+        flex-direction: column; /* Pasa de horizontal a vertical */
+        max-height: none;
+    }
+
+    .results-list .alojamiento-card img {
+        width: 100%;
+        height: 200px; /* La imagen se muestra arriba a ancho completo */
+    }
+
+    .results-list .alojamiento-info {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .filter-container {
+        flex-wrap: wrap; /* Los botones de filtro se acomodan si no entran */
+    }
+}

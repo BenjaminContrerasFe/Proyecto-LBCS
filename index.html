@@ -38,11 +38,11 @@
 
     <!-- MENÚ -->
     <nav class="menu">
-        <a href="#">Inicio</a>
-        <a href="#">Hoteles</a>
-        <a href="#">Casas</a>
-        <a href="#">Departamentos</a>
-        <a href="#">Contacto</a>
+        <a href="index.html">Inicio</a>
+        <a href="buscar.html?tipo=hotel">Hoteles</a>
+        <a href="buscar.html?tipo=casa">Casas</a>
+        <a href="buscar.html?tipo=depa">Departamentos</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
     <!-- HERO / BUSCADOR -->
@@ -50,16 +50,17 @@
         <h1>Encontrá el alojamiento ideal junto a Home Scape</h1>
         <p>Hoteles, departamentos y casas al mejor precio.</p>
 
-        <div class="buscador">
-            <select id="opcion" name="opcion">
-                <option value="op">¿Qué buscas?</option>
+        <!-- Formulario que envía directamente los datos a buscar.html -->
+        <form action="buscar.html" method="GET" class="buscador">
+            <select id="opcion" name="tipo">
+                <option value="todos">¿Qué buscas?</option>
                 <option value="casa">Casa</option>
                 <option value="depa">Departamento</option>
                 <option value="hotel">Hotel</option>
             </select>
 
-            <input type="date">
-            <input type="date">
+            <input type="date" name="checkin">
+            <input type="date" name="checkout">
 
             <!-- CONTADOR DE PASAJEROS -->
             <div class="pasajeros-contenedor">
@@ -99,59 +100,87 @@
                 </div>
             </div>
 
-            <a href="buscar.html"><button type="button">Buscar</button></a>
-        </div>
+            <!-- INPUTS OCULTOS PARA QUE VIAJEN LOS VALORES DE PASAJEROS -->
+            <input type="hidden" name="adultos" id="inputAdultos" value="1">
+            <input type="hidden" name="ninos" id="inputNinos" value="0">
+            <input type="hidden" name="habitaciones" id="inputHabitaciones" value="1">
+
+            <button type="submit">Buscar</button>
+        </form>
     </section>
 
     <!-- SECCIÓN CARRUSEL DE ALOJAMIENTOS -->
     <section class="alojamientos-destacados">
-    <h2>Alojamientos más solicitados</h2>
-    <p>Los lugares preferidos por nuestros huéspedes.</p>
+        <h2>Alojamientos más solicitados</h2>
+        <p class="subtitulo">Los lugares preferidos por nuestros huéspedes.</p>
 
-    <div class="carrusel-wrapper">
-        <button type="button" class="carrusel-btn btn-prev" id="btnPrev">&lt;</button>
+        <div class="carrusel-wrapper">
+            <button type="button" class="carrusel-btn btn-prev" id="btnPrev">&lt;</button>
 
-        <!-- AQUÍ AGREGAS LAS TARJETAS Y SUS IMÁGENES EN EL HTML -->
-        <div class="carrusel-contenedor" id="carruselContenedor">
+            <!-- CONTENEDOR DE TARJETAS HORIZONTALES -->
+            <div class="carrusel-contenedor" id="carruselContenedor">
 
-            <!-- Tarjeta 1 -->
-            <div class="alojamiento">
-                <span class="tipo">Casa Rincon del rio</span>
-                <img src="galeria/recom/rincon del rio.PNG alt="Casa Moderna grande>
-                <div class="alojamiento-info">
-                    <h3>Casa Moderna Rincon del rio</h3>
-                    <p class="ubicacion">Neuquén Capital</p>
-                </div>
-                <div class="precio">$530.000 / noche</div>
+                <!-- Tarjeta 1 -->
+                <a href="buscar.html?tipo=casa" class="alojamiento-card">
+                    <div class="badge-tipo">Casa</div>
+                    <img src="galeria/recom/rincon del rio.PNG" alt="Casa Moderna Rincón del Río">
+                    <div class="alojamiento-info">
+                        <h3>Casa Moderna Rincon del rio</h3>
+                        <p class="ubicacion">Neuquén Capital</p>
+                        <p class="precio"><strong>$530.000</strong> / noche</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta 2 -->
+                <a href="buscar.html?tipo=depa" class="alojamiento-card">
+                    <div class="badge-tipo">Departamento</div>
+                    <img src="galeria/recom/bel.PNG" alt="Departamento dos ambientes">
+                    <div class="alojamiento-info">
+                        <h3>Departamento dos ambientes</h3>
+                        <p class="ubicacion">Neuquén Capital</p>
+                        <p class="precio"><strong>$85.000</strong> / noche</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta 3 -->
+                <a href="buscar.html?tipo=hotel" class="alojamiento-card">
+                    <div class="badge-tipo">Hotel</div>
+                    <img src="galeria/recom/hotelhab.PNG" alt="Hotel Iberia">
+                    <div class="alojamiento-info">
+                        <h3>Iberia Hotel</h3>
+                        <p class="ubicacion">Neuquén Capital</p>
+                        <p class="precio"><strong>$76.000</strong> / noche</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta 4 -->
+                <a href="buscar.html?tipo=casa" class="alojamiento-card">
+                    <div class="badge-tipo">Casa</div>
+                    <img src="galeria/recom/casacheck.PNG" alt="Casa Check In">
+                    <div class="alojamiento-info">
+                        <h3>Casa check in Dpto 2 a 4 pers</h3>
+                        <p class="ubicacion">Neuquén Capital</p>
+                        <p class="precio"><strong>$115.000</strong> / noche</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta 5 -->
+                <a href="buscar.html?tipo=depa" class="alojamiento-card">
+                    <div class="badge-tipo">Departamento</div>
+                    <img src="galeria/recom/duplexcome.PNG" alt="Duplex Bosch">
+                    <div class="alojamiento-info">
+                        <h3>Duplex Bosch</h3>
+                        <p class="ubicacion">Neuquén Capital</p>
+                        <p class="precio"><strong>$432.020</strong> / noche</p>
+                    </div>
+                </a>
+
             </div>
 
-            <!-- Tarjeta 2 -->
-            <div class="alojamiento">
-                <span class="tipo">Departamento</span>
-                <img src="galeria/depa1.png" alt="Departamento dos ambientes">
-                <div class="alojamiento-info">
-                    <h3>Departamento dos ambientes</h3>
-                    <p class="ubicacion">Neuquén Capital</p>
-                </div>
-                <div class="precio">$75.000 / noche</div>
-            </div>
-
-            <!-- Tarjeta 3 -->
-            <div class="alojamiento">
-                <span class="tipo">Hotel</span>
-                <img src="galeria/hotel1.png" alt="La Via Hostel">
-                <div class="alojamiento-info">
-                    <h3>La Via Hostel</h3>
-                    <p class="ubicacion">Neuquén Capital</p>
-                </div>
-                <div class="precio">$45.000 / noche</div>
-            </div>
-
+            <button type="button" class="carrusel-btn btn-next" id="btnNext">&gt;</button>
         </div>
+    </section>
 
-        <button type="button" class="carrusel-btn btn-next" id="btnNext">&gt;</button>
-    </div>
-</section>
     <footer>
         <!-- Contenido del pie de página -->
     </footer>

@@ -10,7 +10,9 @@ body {
     color: #ffffff;            /* Texto base claro */
 }
 
-/* HEADER */
+/* ======================================================
+   HEADER
+   ====================================================== */
 
 .header {
     background-color: #353d7c; /* Azul Noche */
@@ -81,7 +83,9 @@ body {
     color: #010203;
 }
 
-/* MENÚ */
+/* ======================================================
+   MENÚ
+   ====================================================== */
 
 .menu {
     background-color: #010203;
@@ -103,7 +107,9 @@ body {
     color: #52baed; /* Hover celeste */
 }
 
-/* HERO */
+/* ======================================================
+   HERO
+   ====================================================== */
 
 .hero {
     background-color: #353d7c;
@@ -124,7 +130,9 @@ body {
     color: #52baed;
 }
 
-/* BUSCADOR */
+/* ======================================================
+   BUSCADOR
+   ====================================================== */
 
 .buscador {
     background-color: #010203;
@@ -140,11 +148,12 @@ body {
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.buscador input {
+.buscador input,
+.buscador select {
     padding: 15px;
     border: 1px solid #353d7c;
     border-radius: 5px;
-    min-width: 220px;
+    min-width: 180px;
     font-size: 15px;
     color: #010203;
     background-color: #ffffff;
@@ -167,7 +176,9 @@ body {
     color: #353d7c;
 }
 
-/* SELECTOR DE HUÉSPEDES INTERACTIVO */
+/* ======================================================
+   SELECTOR DE HUÉSPEDES INTERACTIVO
+   ====================================================== */
 
 .pasajeros-contenedor {
     position: relative;
@@ -267,7 +278,151 @@ body {
     color: #010203;
 }
 
-/* RESPONSIVE */
+/* ======================================================
+   SECCIÓN DE RECOMENDADOS / ALOJAMIENTOS MÁS SOLICITADOS
+   ====================================================== */
+
+.alojamientos-destacados {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.alojamientos-destacados h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.alojamientos-destacados .subtitulo {
+    color: #52baed;
+    margin-bottom: 20px;
+}
+
+/* ENVOLTORIO Y POSICIONAMIENTO DEL CARRUSEL */
+.carrusel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* CONTENEDOR HORIZONTAL */
+.carrusel-contenedor {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+    width: 100%;
+    
+    /* Ocultar barra de desplazamiento */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carrusel-contenedor::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* TARJETAS DE ALOJAMIENTO */
+.alojamiento-card {
+    flex: 0 0 300px; /* Ancho fijo de 300px por tarjeta */
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alojamiento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.alojamiento-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.badge-tipo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #353d7c;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.alojamiento-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.alojamiento-info h3 {
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+.alojamiento-info .ubicacion {
+    font-size: 13px;
+    color: #0071c2;
+}
+
+.alojamiento-info .precio {
+    color: #262626;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* BOTONES FLOTANTES DE NAVEGACIÓN (< >) */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #52baed;
+    color: #000;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carrusel-btn:hover {
+    background: #3fa1cf;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carrusel-btn.btn-prev {
+    left: -15px;
+}
+
+.carrusel-btn.btn-next {
+    right: -15px;
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
 
 @media(max-width: 768px){
     .header {
@@ -300,76 +455,16 @@ body {
     }
 
     .buscador input,
+    .buscador select,
     .buscador button {
         width: 100%;
     }
-}
 
-/* SECCIÓN ALOJAMIENTOS DESTACADOS */
+    .carrusel-btn.btn-prev {
+        left: 5px;
+    }
 
-.alojamientos-destacados {
-    padding: 60px;
-    background-color: #010203;
-}
-
-.alojamientos-destacados h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.alojamientos-destacados p {
-    color: #52baed;
-}
-
-.contenedor-alojamientos {
-    display: flex;
-    gap: 25px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.alojamiento {
-    width: 320px;
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(82, 186, 237, 0.15);
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.alojamiento:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(82, 186, 237, 0.3);
-}
-
-.alojamiento img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.alojamiento h3 {
-    padding: 10px 15px;
-    color: #010203;
-}
-
-.tipo {
-    background: #353d7c;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-left: 15px;
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.precio {
-    font-weight: bold;
-    padding: 0 15px 15px;
-    color: #353d7c;
-    font-size: 18px;
+    .carrusel-btn.btn-next {
+        right: 5px;
+    }
 }
