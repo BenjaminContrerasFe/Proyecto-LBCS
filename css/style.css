@@ -468,3 +468,8 @@ body {
         right: 5px;
     }
 }
+/* Regla de filtrado */
+.property-card.oculto,
+.alojamiento-card.oculto {
+    display: none !important;
+}

@@ -80,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ======================================================
        2. LÓGICA DE MOVIMIENTO DE FLECHAS EN EL CARRUSEL
        ====================================================== */
+
+    document.addEventListener("DOMContentLoaded", () => {
     const carruselContenedor = document.getElementById("carruselContenedor");
     const btnPrev = document.getElementById("btnPrev");
     const btnNext = document.getElementById("btnNext");
@@ -90,12 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
         btnNext.addEventListener("click", () => {
             carruselContenedor.scrollBy({ left: desplazamiento, behavior: "smooth" });
         });
+    }else{
+        console.error("No se encontro btnnext o carruselContenedor");
     }
 
     if (btnPrev && carruselContenedor) {
         btnPrev.addEventListener("click", () => {
             carruselContenedor.scrollBy({ left: -desplazamiento, behavior: "smooth" });
         });
+    }else{
+        console.error("No se encontro btnprev o carruselContenedor");
     }
+
 
 });

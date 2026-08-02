@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Obtener los parámetros de la URL
+    // 1. Obtener parámetros de la URL
     const params = new URLSearchParams(window.location.search);
 
     const tipo = params.get("tipo") || "todos";
@@ -9,33 +9,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalHuespedes = adultos + ninos;
 
-    // 2. Actualizar el subtítulo dinámico
+    // 2. Actualizar texto informativo
     const subtitulo = document.getElementById("subtituloBusqueda");
     if (subtitulo) {
         subtitulo.textContent = `Búsqueda para ${totalHuespedes} huésped(es) · ${habitaciones} habitación(es)`;
     }
 
-    // 3. Ejecutar el filtrado inicial completo al cargar
+    // 3. Filtrado inicial
     aplicarFiltro(tipo, totalHuespedes, habitaciones);
 
-    // 4. Agregar evento Click a los botones de filtro rápido
+    // 4. Botones de filtro rápido
     const botonesFiltro = document.querySelectorAll(".filter-btn");
     botonesFiltro.forEach(boton => {
         boton.addEventListener("click", (e) => {
             const filtroElegido = e.target.getAttribute("data-filtro");
-            
-            // Cambiar clase activa visualmente en los botones
+
             botonesFiltro.forEach(b => b.classList.remove("active"));
             e.target.classList.add("active");
 
-            // Re-aplicar el filtro manteniendo personas y cuartos
             aplicarFiltro(filtroElegido, totalHuespedes, habitaciones);
         });
     });
 });
 
 function aplicarFiltro(tipoSeleccionado, totalHuespedes, habitacionesRequeridas) {
-    // Busca las tarjetas de propiedades
     const tarjetas = document.querySelectorAll(".property-card, .alojamiento-card");
     let visibles = 0;
 
@@ -44,20 +41,20 @@ function aplicarFiltro(tipoSeleccionado, totalHuespedes, habitacionesRequeridas)
         const capacidadTarjeta = parseInt(tarjeta.getAttribute("data-capacidad")) || 99;
         const habitacionesTarjeta = parseInt(tarjeta.getAttribute("data-habitaciones")) || 1;
 
-        // Validaciones combinadas
+        // Validaciones
         const coincideTipo = (tipoSeleccionado === "todos" || tipoTarjeta === tipoSeleccionado);
         const soportaPersonas = capacidadTarjeta >= totalHuespedes;
         const soportaCuartos = habitacionesTarjeta >= habitacionesRequeridas;
 
         if (coincideTipo && soportaPersonas && soportaCuartos) {
-            tarjeta.style.setProperty("display", "flex", "important");
+            tarjeta.classList.remove("oculto");
             visibles++;
         } else {
-            tarjeta.style.setProperty("display", "none", "important");
+            tarjeta.classList.add("oculto");
         }
     });
 
-    // Control del mensaje cuando no hay resultados
+    // Mensaje si no hay resultados
     let msj = document.getElementById("sinResultados");
     const contenedor = document.getElementById("resultsList");
 
@@ -67,7 +64,7 @@ function aplicarFiltro(tipoSeleccionado, totalHuespedes, habitacionesRequeridas)
             msj.id = "sinResultados";
             msj.style.padding = "20px";
             msj.style.color = "#666";
-            msj.textContent = "No se encontraron alojamientos que cumplan con todos los criterios seleccionados.";
+            msj.textContent = "No se encontraron alojamientos que cumplan con los criterios seleccionados.";
             contenedor.appendChild(msj);
         }
     } else if (msj) {
