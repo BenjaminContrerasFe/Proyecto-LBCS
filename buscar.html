@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados de Búsqueda - Home Scape</title>
 
-    <!-- Hojas de estilo CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buscar.css">
     <link rel="icon" href="galeria/Diseño sin título.png" type="image/png">
 </head>
 <body>
@@ -45,90 +44,170 @@
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- SECCIÓN DE RESULTADOS -->
-    <div class="alojamientos-destacados" style="margin-top: 30px;">
-        <h1 id="tituloBusqueda" style="font-size: 32px; margin-bottom: 5px;">Resultados de Búsqueda</h1>
-        <p id="subtituloBusqueda" class="subtitulo">Alojamiento seleccionado según tus criterios.</p>
+    <!-- CONTENEDOR PRINCIPAL DOS COLUMNAS -->
+    <div class="contenedor-principal">
 
-        <!-- FILTROS RÁPIDOS -->
-        <div class="filter-container" style="display: flex; gap: 10px; margin: 20px 0;">
-            <button class="btn-control filter-btn" data-filtro="todos" style="width: auto; padding: 8px 16px; background-color: #353d7c; color: white;">Todos</button>
-            <button class="btn-control filter-btn" data-filtro="casa" style="width: auto; padding: 8px 16px; background-color: #353d7c; color: white;">Casas</button>
-            <button class="btn-control filter-btn" data-filtro="depa" style="width: auto; padding: 8px 16px; background-color: #353d7c; color: white;">Departamentos</button>
-            <button class="btn-control filter-btn" data-filtro="hotel" style="width: auto; padding: 8px 16px; background-color: #353d7c; color: white;">Hoteles</button>
-        </div>
-
-        <!-- LISTA DE PROPIEDADES -->
-        <div class="results-list" id="resultsList">
-
-            <!-- CASAS -->
-            <div class="property-card alojamiento-card" data-type="casa" data-capacidad="6" data-habitaciones="3">
-                <img src="galeria/recom/rincon del rio.PNG" alt="Casa Moderna Rincón del Río">
-                <div class="alojamiento-info">
-                    <div>
-                        <div class="badge-tipo" style="position: static; display: inline-block; margin-bottom: 8px;">Casa</div>
-                        <h3>Casa Moderna Rincon del rio</h3>
-                        <p class="ubicacion">Neuquén Capital · Plottier</p>
-                        <p style="color: #666; font-size: 14px; margin-top: 6px;">6 huéspedes · 3 dorms · 2 baños · Cochera · Parrilla</p>
-                    </div>
-                    <p class="precio"><strong>ARS $530.000</strong> / noche</p>
-                </div>
+        <!-- PANEL LATERAL DE FILTROS (IZQUIERDA) -->
+        <aside class="sidebar-filtros">
+            <h3>Filtrar por:</h3>
+            
+            <div class="grupo-filtro">
+                <strong>Tipo de propiedad</strong>
+                <label><input type="checkbox" name="tipo" value="casa"> Casas</label>
+                <label><input type="checkbox" name="tipo" value="depa"> Departamentos</label>
+                <label><input type="checkbox" name="tipo" value="hotel"> Hoteles</label>
             </div>
 
-            <div class="property-card alojamiento-card" data-type="casa" data-capacidad="4" data-habitaciones="2">
-                <img src="galeria/recom/casacheck.PNG" alt="Casa Check In">
-                <div class="alojamiento-info">
-                    <div>
-                        <div class="badge-tipo" style="position: static; display: inline-block; margin-bottom: 8px;">Casa</div>
-                        <h3>Casa check in Dpto 2 a 4 pers</h3>
-                        <p class="ubicacion">Neuquén Capital · Alta Barda</p>
-                        <p style="color: #666; font-size: 14px; margin-top: 6px;">4 huéspedes · 2 dorms · 1.5 baños · Wi-Fi de alta velocidad</p>
-                    </div>
-                    <p class="precio"><strong>ARS $115.000</strong> / noche</p>
-                </div>
+            <div class="grupo-filtro">
+                <strong>Presupuesto (por noche)</strong>
+                <label><input type="checkbox"> Menos de $100.000</label>
+                <label><input type="checkbox"> $100.000 - $300.000</label>
+                <label><input type="checkbox"> Mas de $300.000</label>
             </div>
 
-            <!-- DEPARTAMENTOS -->
-            <div class="property-card alojamiento-card" data-type="depa" data-capacidad="2" data-habitaciones="1">
-                <img src="galeria/recom/bel.PNG" alt="Departamento dos ambientes">
-                <div class="alojamiento-info">
-                    <div>
-                        <div class="badge-tipo" style="position: static; display: inline-block; margin-bottom: 8px;">Departamento</div>
-                        <h3>Departamento dos ambientes</h3>
-                        <p class="ubicacion">Neuquén Capital · Centro</p>
-                        <p style="color: #666; font-size: 14px; margin-top: 6px;">2 huéspedes · 1 dorm · 1 baño · Balcón al frente</p>
-                    </div>
-                    <p class="precio"><strong>ARS $85.000</strong> / noche</p>
-                </div>
+            <div class="grupo-filtro">
+                <strong>Servicios</strong>
+                <label><input type="checkbox"> Wi-Fi Gratis</label>
+                <label><input type="checkbox"> Estacionamiento / Cochera</label>
+                <label><input type="checkbox"> Parrilla</label>
+            </div>
+        </aside>
+
+        <!-- SECCIÓN DE RESULTADOS (DERECHA) -->
+        <main class="alojamientos-destacados">
+            <h1 id="tituloBusqueda" style="font-size: 28px; margin-bottom: 5px;">Resultados de Búsqueda</h1>
+            <p id="subtituloBusqueda" class="subtitulo">Alojamiento seleccionado según tus criterios.</p>
+
+            <!-- FILTROS RÁPIDOS -->
+            <div class="filter-container">
+                <button class="btn-control filter-btn activo" data-filtro="todos">Todos</button>
+                <button class="btn-control filter-btn" data-filtro="casa">Casas</button>
+                <button class="btn-control filter-btn" data-filtro="depa">Departamentos</button>
+                <button class="btn-control filter-btn" data-filtro="hotel">Hoteles</button>
             </div>
 
-            <div class="property-card alojamiento-card" data-type="depa" data-capacidad="5" data-habitaciones="2">
-                <img src="galeria/recom/duplexcome.PNG" alt="Duplex Bosch">
-                <div class="alojamiento-info">
-                    <div>
-                        <div class="badge-tipo" style="position: static; display: inline-block; margin-bottom: 8px;">Departamento</div>
-                        <h3>Duplex Bosch</h3>
-                        <p class="ubicacion">Neuquén Capital</p>
-                        <p style="color: #666; font-size: 14px; margin-top: 6px;">5 huéspedes · 2 plantas · 2 baños · Totalmente equipado</p>
-                    </div>
-                    <p class="precio"><strong>ARS $432.020</strong> / noche</p>
-                </div>
-            </div>
+            <!-- LISTA DE PROPIEDADES (HORIZONTALES) -->
+            <div class="results-list" id="resultsList">
 
-            <!-- HOTELES -->
-            <div class="property-card alojamiento-card" data-type="hotel" data-capacidad="2" data-habitaciones="1">
-                <img src="galeria/recom/hotelhab.PNG" alt="Hotel Iberia">
-                <div class="alojamiento-info">
-                    <div>
-                        <div class="badge-tipo" style="position: static; display: inline-block; margin-bottom: 8px;">Hotel</div>
-                        <h3>Iberia Hotel - Habitación Superior</h3>
-                        <p class="ubicacion">Neuquén Capital</p>
-                        <p style="color: #666; font-size: 14px; margin-top: 6px;">1 huéspedes · Desayuno buffet incluido · Recepción 24hs</p>
+                <!-- CASAS -->
+                <article class="property-card alojamiento-card" data-type="casa" data-capacidad="6" data-habitaciones="3">
+                    <img src="galeria/recom/rincon del rio.PNG" alt="Casa Moderna Rincón del Río">
+                    <div class="alojamiento-info">
+                        <div class="info-detalles">
+                            <div>
+                                <span class="badge-tipo">Casa</span>
+                                <h3>Casa Moderna Rincon del rio</h3>
+                                <p class="ubicacion">Neuquén Capital · Plottier</p>
+                            </div>
+                            <p class="caracteristicas">6 huéspedes · 3 dorms · 2 baños · Cochera · Parrilla</p>
+                        </div>
+                        <div class="info-precio-btn">
+                            <div>
+                                <p class="precio">ARS $530.000</p>
+                                <span class="impuestos">/ noche</span>
+                            </div>
+                            <button class="btn-disponibilidad">Ver disponibilidad &gt;</button>
+                        </div>
                     </div>
-                    <p class="precio"><strong>ARS $76.000</strong> / noche</p>
-                </div>
-            </div>
+                </article>
 
+                <article class="property-card alojamiento-card" data-type="casa" data-capacidad="4" data-habitaciones="2">
+                    <img src="galeria/recom/casacheck.PNG" alt="Casa Check In">
+                    <div class="alojamiento-info">
+                        <div class="info-detalles">
+                            <div>
+                                <span class="badge-tipo">Casa</span>
+                                <h3>Casa check in Dpto 2 a 4 pers</h3>
+                                <p class="ubicacion">Neuquén Capital · Alta Barda</p>
+                            </div>
+                            <p class="caracteristicas">4 huéspedes · 2 dorms · 1.5 baños · Wi-Fi de alta velocidad</p>
+                        </div>
+                        <div class="info-precio-btn">
+                            <div>
+                                <p class="precio">ARS $115.000</p>
+                                <span class="impuestos">/ noche</span>
+                            </div>
+                            <button class="btn-disponibilidad">Ver disponibilidad &gt;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DEPARTAMENTOS -->
+                <article class="property-card alojamiento-card" data-type="depa" data-capacidad="2" data-habitaciones="1">
+                    <img src="galeria/recom/bel.PNG" alt="Departamento dos ambientes">
+                    <div class="alojamiento-info">
+                        <div class="info-detalles">
+                            <div>
+                                <span class="badge-tipo">Departamento</span>
+                                <h3>Departamento dos ambientes</h3>
+                                <p class="ubicacion">Neuquén Capital · Centro</p>
+                            </div>
+                            <p class="caracteristicas">2 huéspedes · 1 dorm · 1 baño · Balcón al frente</p>
+                        </div>
+                        <div class="info-precio-btn">
+                            <div>
+                                <p class="precio">ARS $85.000</p>
+                                <span class="impuestos">/ noche</span>
+                            </div>
+                            <button class="btn-disponibilidad">Ver disponibilidad &gt;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card alojamiento-card" data-type="depa" data-capacidad="5" data-habitaciones="2">
+                    <img src="galeria/recom/duplexcome.PNG" alt="Duplex Bosch">
+                    <div class="alojamiento-info">
+                        <div class="info-detalles">
+                            <div>
+                                <span class="badge-tipo">Departamento</span>
+                                <h3>Duplex Bosch</h3>
+                                <p class="ubicacion">Neuquén Capital</p>
+                            </div>
+                            <p class="caracteristicas">5 huéspedes · 2 plantas · 2 baños · Totalmente equipado</p>
+                        </div>
+                        <div class="info-precio-btn">
+                            <div>
+                                <p class="precio">ARS $432.020</p>
+                                <span class="impuestos">/ noche</span>
+                            </div>
+                            <button class="btn-disponibilidad">Ver disponibilidad &gt;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- HOTELES -->
+                <article class="property-card alojamiento-card" data-type="hotel" data-capacidad="2" data-habitaciones="1">
+                    <img src="galeria/recom/hotelhab.PNG" alt="Hotel Iberia">
+                    <div class="alojamiento-info">
+                        <div class="info-detalles">
+                            <div>
+                                <span class="badge-tipo">Hotel</span>
+                                <h3>Iberia Hotel - Habitación Superior</h3>
+                                <p class="ubicacion">Neuquén Capital</p>
+                            </div>
+                            <p class="caracteristicas">1 huéspedes · Desayuno buffet incluido · Recepción 24hs</p>
+                        </div>
+                        <div class="info-precio-btn">
+                            <div>
+                                <p class="precio">ARS $76.000</p>
+                                <span class="impuestos">/ noche</span>
+                            </div>
+                            <button class="btn-disponibilidad">Ver disponibilidad &gt;</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL DE VISTA PREVIA -->
+    <div id="modalPreview" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Se inyectará con JavaScript -->
+            </div>
         </div>
     </div>
 
