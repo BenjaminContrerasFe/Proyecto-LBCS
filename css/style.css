@@ -6,16 +6,14 @@
 }
 
 body {
-    background-color: #ffffff; /* Fondo claro principal */
-    color: #032C60;            /* Texto base oscuro */
+    background-color: #99BAD9; 
+    color: #032C60;            
 }
 
-/* ======================================================
-   HEADER
-   ====================================================== */
+
 
 .header {
-    background-color: #ffffff;
+    background-color: #99BAD9;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -484,5 +482,5 @@ body {
 /* Regla de filtrado */
 .property-card.oculto,
 .alojamiento-card.oculto {
-    display: none !important;
+    display: none ;
 }
