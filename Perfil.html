@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="css/perfil.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Home<span>Scape</span></div>
+      <div class="user-badge">
+        <div class="avatar-circle">JD</div>
+        <span>Juan Díaz</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <!-- Sidebar de Navegación -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-avatar">JD</div>
+        <div class="profile-info">
+          <h3>Juan Díaz</h3>
+          <p>juan.diaz@email.com</p>
+          <span class="badge-genius">Nivel Genius 2</span>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <a href="#" class="nav-item active">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          Datos personales
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          Métodos de pago
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Mis reservas
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          Favoritos
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
+          Seguridad y contraseña
+        </a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <div class="content-header">
+        <h1>Datos personales</h1>
+        <p>Actualizá tus datos personales y gestioná la información de tu perfil.</p>
+      </div>
+
+      <div class="settings-card">
+        
+        <div class="settings-row">
+          <div class="field-info">
+            <span class="field-label">Nombre completo</span>
+            <span class="field-value">Juan Díaz</span>
+          </div>
+          <button class="btn-secondary">Editar</button>
+        </div>
+
+        <div class="settings-row">
+          <div class="field-info">
+            <span class="field-label">Correo electrónico</span>
+            <span class="field-value">juan.diaz@email.com</span>
+            <span class="verified-tag">Verificado</span>
+          </div>
+          <button class="btn-secondary">Editar</button>
+        </div>
+
+        <div class="settings-row">
+          <div class="field-info">
+            <span class="field-label">Número de teléfono</span>
+            <span class="field-value">+54 9 299 123-4567</span>
+          </div>
+          <button class="btn-secondary">Editar</button>
+        </div>
+
+        <div class="settings-row">
+          <div class="field-info">
+            <span class="field-label">Fecha de nacimiento</span>
+            <span class="field-value">14 de mayo de 1998</span>
+          </div>
+          <button class="btn-secondary">Editar</button>
+        </div>
+
+        <div class="settings-row">
+          <div class="field-info">
+            <span class="field-label">Nacionalidad</span>
+            <span class="field-value">Argentina</span>
+          </div>
+          <button class="btn-secondary">Editar</button>
+        </div>
+
+        <div class="settings-row">
+          <div class="field-info">
+            <span class="field-label">Dirección</span>
+            <span class="field-value">No especificada</span>
+          </div>
+          <button class="btn-secondary">Añadir</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
