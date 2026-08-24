@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #010203; /* Fondo principal oscuro */
-    color: #ffffff;            /* Texto base claro */
+    background-color: #ffffff; /* Fondo claro principal */
+    color: #032C60;            /* Texto base oscuro */
 }
 
 /* ======================================================
@@ -15,11 +15,12 @@ body {
    ====================================================== */
 
 .header {
-    background-color: #353d7c; /* Azul Noche */
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
+    border-bottom: 1px solid #99BAD9;
 }
 
 .logo img {
@@ -35,10 +36,16 @@ body {
 
 .preferencia {
     padding: 8px;
-    border: 1px solid #52baed;
+    border: 1px solid #99BAD9;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #353d7c;
+    background-color: #ffffff;
+    color: #032C60;
+    transition: all 0.2s;
+}
+
+.preferencia:hover {
+    background-color: #99BAD9;
     color: #ffffff;
 }
 
@@ -48,39 +55,39 @@ body {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: all 0.2s;
     font-weight: bold;
 }
 
 .login {
-    color: #ffffff;
+    color: #032C60;
 }
 
 .login:hover {
     text-decoration: underline;
-    background-color: #010203;
-    color: #52baed;
+    background-color: rgba(153, 186, 217, 0.2);
+    color: #032C60;
 }
 
 .registro {
-    background-color: #52baed; /* Celeste acento */
-    color: #010203;            /* Texto oscuro para alto contraste */
+    background-color: #032C60; /* Color primario principal */
+    color: #ffffff;
 }
 
 .registro:hover {
-    background-color: #ffffff;
-    color: #353d7c;
+    background-color: #99BAD9;
+    color: #032C60;
 } 
 
 .publicar {
     background-color: transparent;
-    border: 1px solid #52baed;
-    color: #52baed;
+    border: 1px solid #032C60;
+    color: #032C60;
 }
 
 .publicar:hover {
-    background-color: #52baed;
-    color: #010203;
+    background-color: #032C60;
+    color: #ffffff;
 }
 
 /* ======================================================
@@ -88,23 +95,23 @@ body {
    ====================================================== */
 
 .menu {
-    background-color: #010203;
+    background-color: #ffffff;
     display: flex;
     gap: 25px;
     padding: 15px 50px;
-    border-top: 1px solid rgba(82, 186, 237, 0.2);
-    border-bottom: 1px solid rgba(82, 186, 237, 0.2);
+    border-top: 1px solid #99BAD9;
+    border-bottom: 1px solid #99BAD9;
 }
 
 .menu a {
-    color: #ffffff;
+    color: #032C60;
     text-decoration: none;
     font-size: 16px;
-    transition: 0.3s;
+    transition: all 0.2s;
 }
 
 .menu a:hover {
-    color: #52baed; /* Hover celeste */
+    color: #99BAD9;
 }
 
 /* ======================================================
@@ -112,7 +119,7 @@ body {
    ====================================================== */
 
 .hero {
-    background-color: #353d7c;
+    background-color: #032C60;
     color: #ffffff;
     text-align: center;
     padding: 80px 20px 120px;
@@ -127,7 +134,7 @@ body {
 .hero p {
     font-size: 20px;
     margin-bottom: 40px;
-    color: #52baed;
+    color: #99BAD9;
 }
 
 /* ======================================================
@@ -135,45 +142,45 @@ body {
    ====================================================== */
 
 .buscador {
-    background-color: #010203;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     padding: 12px;
-    border-radius: 10px;
+    border-radius: 12px;
     max-width: 1000px;
     margin: auto;
-    border: 1px solid #353d7c;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #99BAD9;
+    box-shadow: 0px 10px 25px rgba(3, 44, 96, 0.15);
 }
 
 .buscador input,
 .buscador select {
     padding: 15px;
-    border: 1px solid #353d7c;
+    border: 1px solid #99BAD9;
     border-radius: 5px;
     min-width: 180px;
     font-size: 15px;
-    color: #010203;
+    color: #032C60;
     background-color: #ffffff;
 }
 
 .buscador button {
     padding: 15px 25px;
-    background-color: #52baed;
-    color: #010203;
+    background-color: #032C60;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: all 0.2s;
 }
 
 .buscador button:hover {
-    background-color: #ffffff;
-    color: #353d7c;
+    background-color: #99BAD9;
+    color: #032C60;
 }
 
 /* ======================================================
@@ -191,13 +198,14 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 15px;
-    color: #010203;
+    color: #032C60;
     text-align: left;
     height: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid #353d7c;
+    border: 1px solid #99BAD9;
     user-select: none;
+    transition: all 0.2s;
 }
 
 .pasajeros-dropdown {
@@ -207,8 +215,9 @@ body {
     left: 0;
     width: 280px;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid #99BAD9;
+    box-shadow: 0px 8px 25px rgba(3, 44, 96, 0.15);
     padding: 20px;
     z-index: 100;
 }
@@ -226,7 +235,7 @@ body {
 
 .pasajeros-item span {
     font-weight: bold;
-    color: #010203;
+    color: #032C60;
     font-size: 15px;
 }
 
@@ -234,7 +243,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    border: 1px solid #353d7c;
+    border: 1px solid #99BAD9;
     border-radius: 5px;
     padding: 2px;
 }
@@ -247,35 +256,35 @@ body {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    color: #353d7c;
+    color: #032C60;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.2s;
+    transition: all 0.2s;
     border-radius: 4px;
 }
 
 .btn-control:hover {
-    background-color: #52baed;
-    color: #010203;
+    background-color: #99BAD9;
+    color: #032C60;
 }
 
 .btn-pasajeros-listo {
     width: 100%;
     padding: 10px;
-    background-color: #353d7c;
+    background-color: #032C60;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: all 0.2s;
 }
 
 .btn-pasajeros-listo:hover {
-    background-color: #52baed;
-    color: #010203;
+    background-color: #99BAD9;
+    color: #032C60;
 }
 
 /* ======================================================
@@ -289,13 +298,13 @@ body {
 }
 
 .alojamientos-destacados h2 {
-    color: #ffffff;
+    color: #032C60;
     font-size: 28px;
     margin-bottom: 5px;
 }
 
 .alojamientos-destacados .subtitulo {
-    color: #52baed;
+    color: #99BAD9;
     margin-bottom: 20px;
 }
 
@@ -326,12 +335,13 @@ body {
 
 /* TARJETAS DE ALOJAMIENTO */
 .alojamiento-card {
-    flex: 0 0 300px; /* Ancho fijo de 300px por tarjeta */
+    flex: 0 0 300px;
     background: #ffffff;
+    border: 1px solid #99BAD9;
     border-radius: 12px;
     overflow: hidden;
     text-decoration: none;
-    color: #333;
+    color: #032C60;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -341,7 +351,7 @@ body {
 
 .alojamiento-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(3, 44, 96, 0.15);
 }
 
 .alojamiento-card img {
@@ -355,8 +365,8 @@ body {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #353d7c;
-    color: white;
+    background: #032C60;
+    color: #ffffff;
     padding: 5px 12px;
     border-radius: 6px;
     font-size: 12px;
@@ -373,17 +383,18 @@ body {
 
 .alojamiento-info h3 {
     font-size: 16px;
-    color: #1a1a1a;
+    color: #032C60;
     font-weight: bold;
 }
 
 .alojamiento-info .ubicacion {
     font-size: 13px;
-    color: #0071c2;
+    color: #99BAD9;
 }
 
 .alojamiento-info .precio {
-    color: #262626;
+    color: #032C60;
+    font-weight: bold;
     font-size: 15px;
     margin-top: 5px;
 }
@@ -393,8 +404,8 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #52baed;
-    color: #000;
+    background: #032C60;
+    color: #ffffff;
     border: none;
     width: 42px;
     height: 42px;
@@ -403,12 +414,13 @@ body {
     font-size: 20px;
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(3, 44, 96, 0.2);
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .carrusel-btn:hover {
-    background: #3fa1cf;
+    background: #99BAD9;
+    color: #032C60;
     transform: translateY(-50%) scale(1.08);
 }
 
@@ -468,6 +480,7 @@ body {
         right: 5px;
     }
 }
+
 /* Regla de filtrado */
 .property-card.oculto,
 .alojamiento-card.oculto {
